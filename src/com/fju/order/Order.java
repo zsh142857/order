@@ -9,9 +9,15 @@ public class Order {
         this.amount = amount;
         this.delivery = delivery;
         shipFeed=delivery.price;
+
     }
     public int  total(){
+        if(delivery instanceof ShopeeDelivery&&amount>199){
+            return amount;
+
+        }else {
         return amount+shipFeed;
+        }
     }
 
 
